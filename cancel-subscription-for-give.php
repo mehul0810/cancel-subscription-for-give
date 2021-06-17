@@ -12,6 +12,10 @@ if( !defined('ABSPATH') ) exit('Don\'t try to rob');
 
 // Basic Plugin Constants
 
+if ( ! defined( 'GIVE_RECURRING_CANCELLATION_VERSION' ) ) {
+	define( 'GIVE_RECURRING_CANCELLATION_VERSION', '0.0.1' );
+}
+
 if ( ! defined( 'GIVE_RECURRING_CANCELLATION_PLUGIN_FILE' ) ) {
 	define( 'GIVE_RECURRING_CANCELLATION_PLUGIN_FILE', __FILE__ );
 }
@@ -48,11 +52,11 @@ add_filter( 'give_template_paths', 'csfg_override_shortcode_subscription_templat
 
 function csfg_scripts(){
     // Resgister Style
-    wp_register_style('give-cancel-subscription', GIVE_RECURRING_CANCELLATION_URL . '/assets/css/cancel-subscription-confirmation.css', array(), time() );
+    wp_register_style('give-cancel-subscription', GIVE_RECURRING_CANCELLATION_URL . '/assets/css/cancel-subscription-confirmation.css', array(), GIVE_RECURRING_CANCELLATION_VERSION );
     // Load Style on Page
     wp_enqueue_style('give-cancel-subscription');
     // Register Script
-    wp_register_script('give-cancel-subscription', GIVE_RECURRING_CANCELLATION_URL . '/assets/js/cancel-subscription-confirmation.js', array(), time(), true );
+    wp_register_script('give-cancel-subscription', GIVE_RECURRING_CANCELLATION_URL . '/assets/js/cancel-subscription-confirmation.js', array(), GIVE_RECURRING_CANCELLATION_VERSION, true );
     // Load JS on page
     wp_enqueue_script('give-cancel-subscription');
 }

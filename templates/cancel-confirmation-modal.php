@@ -14,23 +14,23 @@
             <span class="csfg-close-confirm-modal">&times;</span>
             <div class="csfg-cancel-subscription-head">
                 <?php do_action('csfg_before_confirm_cancel_title_text'); ?>
-                <h2 class="csfg-title"> <?php echo apply_filters( 'csfg_confirm_cancel_title_text', __('Please confirm your cancellation', 'cancel-subscription' ) ); ?></h2>
+                <h2 class="csfg-title"> <?php echo apply_filters( 'csfg_confirm_cancel_title_text', __('Please confirm your cancellation', 'cancel-subscription-for-give' ) ); ?></h2>
                 <?php do_action('csfg_after_confirm_cancel_title_text'); ?>
             </div>
             <?php do_action('csfg_bofore_confirm_cancel_body'); ?>
             <div class="csfg-cancel-subscription-body">
                 <p class="csfg-subtitle">
                     <?php 
-                        $cancel_subtitle = __('Please tell us why you are cancelling', 'cancel-subscription');
+                        $cancel_subtitle = __('Please tell us why you are cancelling', 'cancel-subscription-for-give');
                         echo apply_filters('csfg_confirm_cancel_subtitle_text', $cancel_subtitle );
                     ?>
                 </p>
                 <?php 
                     $cancel_reasons = array(
-                        __('My financial circumstances have changed', 'cancel-subscription'),
-                        __('I\'ve changed my giving options', 'cancel-subscription' ),
-                        __('The OM worker/project no longer needs my support', 'cancel-subscription'),
-                        __('I\'m changing the amount', 'cancel-subscription')             
+                        __('My financial circumstances have changed', 'cancel-subscription-for-give'),
+                        __('I\'ve changed my giving options', 'cancel-subscription-for-give' ),
+                        __('The OM worker/project no longer needs my support', 'cancel-subscription-for-give'),
+                        __('I\'m changing the amount', 'cancel-subscription-for-give')             
                     );
                     $cancel_reasons = apply_filters('give_cancel_subscription_reasons', $cancel_reasons );
                 ?>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="csfg-form-group">
                         <?php do_action('csfg_before_confirm_cancel_subscription_button'); ?>
-                        <button class="give-confirm-cancel-subscription give-form-button csfg-button"><?php echo apply_filters('cancel_subscription_confirm_button_text', __('Confirm Cancellation', 'cancel-subscription') );?></button>      
+                        <button class="give-confirm-cancel-subscription give-form-button csfg-button"><?php echo apply_filters('cancel_subscription_confirm_button_text', __('Confirm Cancellation', 'cancel-subscription-for-give') );?></button>      
                         <?php do_action('csfg_after_confirm_cancel_subscription_button'); ?>
                     </div>
                 </form>
@@ -64,5 +64,3 @@
         </div>
     </div>
  </div>
-
-

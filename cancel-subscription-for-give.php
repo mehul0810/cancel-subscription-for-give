@@ -3,7 +3,7 @@
  * plugin name: Give - Cancel Subscription
  * description: Ask reason before cancelling the Give Recurring Donation.
  * Author: Vishal Tanwar
- * Version: 0.0.1
+ * Version: 0.0.2
  * text domain: cancel-subscription-for-give   
 */
 
@@ -13,7 +13,7 @@ if( !defined('ABSPATH') ) exit('Don\'t try to rob');
 // Basic Plugin Constants
 
 if ( ! defined( 'GIVE_RECURRING_CANCELLATION_VERSION' ) ) {
-	define( 'GIVE_RECURRING_CANCELLATION_VERSION', '0.0.1' );
+	define( 'GIVE_RECURRING_CANCELLATION_VERSION', '0.0.2' );
 }
 
 if ( ! defined( 'GIVE_RECURRING_CANCELLATION_PLUGIN_FILE' ) ) {

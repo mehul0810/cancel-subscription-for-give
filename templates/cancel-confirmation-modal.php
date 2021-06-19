@@ -55,7 +55,7 @@
                     </div>
                     <div class="csfg-form-group">
                         <?php do_action('csfg_before_confirm_cancel_subscription_button'); ?>
-                        <button class="give-confirm-cancel-subscription give-form-button csfg-button"><?php echo apply_filters('cancel_subscription_confirm_button_text', __('Confirm Cancellation', 'cancel-subscription-for-give') );?></button>      
+                        <button class="give-confirm-cancel-subscription give-form-button button button-primary"><?php echo apply_filters('cancel_subscription_confirm_button_text', __('Confirm Cancellation', 'cancel-subscription-for-give') );?></button>      
                         <?php do_action('csfg_after_confirm_cancel_subscription_button'); ?>
                     </div>
                 </form>

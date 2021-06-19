@@ -45,7 +45,6 @@ function csfg_process_cancellation( $postdata ){
 
         do_action( 'before_cancel_subscription',  $subscription );
         
-        $subscription->cancel();
         // Add Subscription Meta
         give_recurring()->subscription_meta->update_meta( $subscription->id, '__reason_for_cancelling', $cancel_reason );
         give_recurring()->subscription_meta->update_meta( $subscription->id, '__other_reason_for_cancelling', $other_cancel_reason );
@@ -53,6 +52,9 @@ function csfg_process_cancellation( $postdata ){
         // Add Donation/payment meta
         Give()->payment_meta->update_meta( $subscription->id, '__reason_for_cancelling', $cancel_reason );
         Give()->payment_meta->update_meta( $subscription->id, '__other_reason_for_cancelling', $other_cancel_reason );
+
+        //Cancal Subscription
+		$subscription->cancel();
 
         // redirect to admin if admin panel 
         if ( is_admin() ) {

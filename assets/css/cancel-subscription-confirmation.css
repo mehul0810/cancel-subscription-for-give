@@ -80,8 +80,8 @@
     width: 100%;
 }   
 .csfg-form-field, input.csfg-form-field, textarea.csfg-form-field {
-    border: 1px solid;
     outline: none;
+    width: 100%
 }
 .csfg-hide{
     display: none !important;

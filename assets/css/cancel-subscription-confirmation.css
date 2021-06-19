@@ -30,7 +30,6 @@
 }
 .csfg-cancel-subscription-content {
     background: #fff;
-    padding: 30px 45px;
     border-radius: 5px;
     position: relative;
 }
@@ -51,8 +50,11 @@
 
 .csfg-cancel-subscription-head {
     margin-bottom: 15px;
-    border-bottom: 1px solid;
-    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px;
+}
+.csfg-cancel-subscription-body{
+    padding: 0 15px;
 }
 .csfg-close-confirm-modal {
     position: absolute;

@@ -122,7 +122,7 @@ function csfg_reason_for_cancelling( $tag_args ){
     
     // Format Reason on the Basis of Other 
     $format_reason = $cancel_reason;
-    if( strtolower( $cancel_reason ) == 'other' ){
+    if( trim( $cancel_reason ) == 'other' ){
         $format_reason = __( 'Others', 'cancel-subscription-for-give' ) . ' - ' . $other_cancel_reason;
     }
 
@@ -130,3 +130,37 @@ function csfg_reason_for_cancelling( $tag_args ){
     return $format_reason ;
     
 }
+
+// Add Cancel Subscription Reason on admin Subscription Details Page
+
+add_action('give_recurring_add_subscription_detail', 'csfg_cancel_reason_on_subscription_details', 1, 1 );
+
+function csfg_cancel_reason_on_subscription_details( $subs_id ){
+    // Subscription Object
+    $subscription = new Give_Subscription( $subs_id );
+
+    // Get Cancel Reason by id
+    $cancel_reason = give_recurring()->subscription_meta->get_meta( $subs_id, '__reason_for_cancelling', true );
+    $other_cancel_reason = give_recurring()->subscription_meta->get_meta( $subs_id, '__other_reason_for_cancelling', true );
+
+    if( $subscription->status == "cancelled" ){
+        ?>
+            <tr>
+                <td class="row-title">
+                    <label for="subscription_cancel_reason"><?php _e( 'Cancel Reason:', 'cancel-subscription-for-give' ); ?></label>
+                </td>
+                <td>
+                    <?php
+                        if( trim( $cancel_reason ) == 'other' ):
+                            echo __('Others', 'cancel-subscription-for-give') . ' - ' . $other_cancel_reason;
+                        else:
+                            echo $cancel_reason;
+                        endif;
+                    ?>
+                </td>
+            </tr>
+        <?php
+    }
+
+}
+

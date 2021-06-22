@@ -2,8 +2,8 @@
 /** 
  * plugin name: Give - Cancel Subscription
  * description: Ask reason before cancelling the Give Recurring Donation.
- * Author: Vishal Tanwar
- * Version: 0.0.3
+ * Author: Mehul Gohil
+ * Version: 1.0.0
  * text domain: cancel-subscription-for-give   
 */
 

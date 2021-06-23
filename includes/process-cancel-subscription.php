@@ -54,7 +54,9 @@ function csfg_process_cancellation( $postdata ){
         Give()->payment_meta->update_meta( $subscription->id, '__other_reason_for_cancelling', $other_cancel_reason );
 
         //Cancal Subscription
-		$subscription->cancel();
+	do_action( 'give_recurring_cancel_' . $subscription->gateway . '_subscription', $subscription, true );
+	
+	$subscription->cancel();
 
         // redirect to admin if admin panel 
         if ( is_admin() ) {

@@ -35,6 +35,12 @@ document.addEventListener('readystatechange', e => {
         // Hide and show textarea if Reason seleted Other
         let rs = document.querySelector('.give_cancel_reasons');
         let confirmCancelButton = document.querySelector('.give-confirm-cancel-subscription');
+
+        // Don't proceed with `cancel reasons` elements doesn't exists.
+        if ( ! rs ) {
+            return;
+        }
+        
         rs.addEventListener('change', event => {
             let cValue = event.target.value;
             let otherReasonField = document.querySelector('.csfg-other-reason'); 
